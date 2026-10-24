@@ -99,13 +99,14 @@ a { color: inherit; }
 }
 
 .cover__inner {
-  --u: clamp(1.3px, calc(100cqi / 230), 2.2px);
+  --u: clamp(1.2px, calc(100cqi / 240), 2.1px);
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: calc(56 * var(--u));
-  padding: calc(48 * var(--u)) var(--gutter) calc(30 * var(--u));
+  gap: clamp(18px, calc(42 * var(--u)), 60px);
+  padding: clamp(24px, calc(38 * var(--u)), 56px) var(--gutter) clamp(18px, calc(26 * var(--u)), 36px);
+  box-sizing: border-box;
 }
 
 .cover__logo { margin: 0; }
@@ -158,9 +159,9 @@ a { color: inherit; }
 .cover__copy + .cover__copy { border-top: max(1px, calc(.4 * var(--u))) solid var(--cyan); }
 
 .cover__cta {
-  margin-top: calc(14 * var(--u));
+  margin-top: clamp(14px, calc(12 * var(--u)), 28px);
   width: max-content;
-  min-height: max(48px, calc(24 * var(--u)));
+  min-height: max(46px, calc(23 * var(--u)));
   padding: 0 calc(16 * var(--u));
   font-size: max(15px, calc(9.5 * var(--u)));
   font-weight: 700;
@@ -171,14 +172,29 @@ a { color: inherit; }
 .cover__cta:active { transform: translateY(1px); }
 
 .cover__note {
-  margin: calc(9 * var(--u)) calc(-22 * var(--u)) 0;
-  display: grid; gap: .15em;
+  margin: calc(9 * var(--u)) auto 0;
+  max-width: calc(220 * var(--u));
+  display: grid;
+  gap: .25em;
   font-size: max(13px, calc(7.6 * var(--u)));
   line-height: 1.35;
   color: rgba(255, 255, 255, .92);
   text-wrap: balance;
 }
-.cover__note span:first-child { font-weight: 700; color: var(--white); }
+.cover__note-invite {
+  font-size: max(15px, calc(9.2 * var(--u)));
+  font-weight: 600;
+  font-style: italic;
+  color: var(--white);
+  letter-spacing: .015em;
+}
+.cover__note-invite em {
+  font-style: italic;
+}
+.cover__note-deadline {
+  font-size: max(12px, calc(7.2 * var(--u)));
+  opacity: .92;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .cover__mast, .cover__pitch { animation: settle .9s cubic-bezier(.2, .7, .2, 1) both; }
@@ -286,6 +302,15 @@ dd.cost__note--after { margin: calc(1.5 * var(--v)) 0 0; color: var(--ink); font
   line-height: 1.26;
   text-transform: uppercase;
   text-wrap: balance;
+}
+.members__invite {
+  font-style: italic;
+  font-size: calc(11.5 * var(--v));
+  letter-spacing: .01em;
+  margin-bottom: calc(3 * var(--v));
+}
+.members__invite em {
+  font-style: italic;
 }
 .members sup { font-size: .5em; vertical-align: .95em; line-height: 0; }
 
