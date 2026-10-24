@@ -160,10 +160,10 @@ a { color: inherit; }
 .cover__cta:active { transform: translateY(1px); }
 
 .cover__note {
-  margin: clamp(12px, calc(10 * var(--u)), 22px) auto 0;
+  margin: clamp(16px, calc(14 * var(--u)), 28px) auto 0;
   max-width: calc(240 * var(--u));
   display: grid;
-  gap: .3em;
+  gap: .35em;
   font-size: max(13px, calc(7.6 * var(--u)));
   line-height: 1.35;
   color: rgba(255, 255, 255, .92);

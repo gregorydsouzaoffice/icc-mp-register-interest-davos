@@ -40,9 +40,9 @@ const CONFIG = {
     return;
   }
 
-  /* ── mobile dock: visible between the hero button and the form ── */
+  /* ── mobile dock: visible between the hero and the form ── */
   if (dock && "IntersectionObserver" in window) {
-    const heroCta = document.querySelector(".cover [data-cta]");
+    const heroTarget = document.querySelector(".cover [data-cta]") || document.querySelector(".cover__pitch") || document.querySelector(".cover");
     const register = document.getElementById("register");
     const seen = { hero: true, form: false };
     const sync = () => {
@@ -51,18 +51,21 @@ const CONFIG = {
       dock.setAttribute("aria-hidden", show ? "false" : "true");
       dock.tabIndex = show ? 0 : -1;
     };
-    new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        // treat the hero button as 'seen' until the visitor has scrolled past it
-        if (e.target === heroCta) seen.hero = e.isIntersecting || e.boundingClientRect.top > 0;
-        if (e.target === register) seen.form = e.isIntersecting;
-      });
-      sync();
-    }, { threshold: 0 }).observe(heroCta);
-    new IntersectionObserver((entries) => {
-      entries.forEach((e) => { seen.form = e.isIntersecting; });
-      sync();
-    }, { rootMargin: "0px 0px -35% 0px" }).observe(register);
+    if (heroTarget) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.target === heroTarget) seen.hero = e.isIntersecting || e.boundingClientRect.top > 0;
+          if (e.target === register) seen.form = e.isIntersecting;
+        });
+        sync();
+      }, { threshold: 0 }).observe(heroTarget);
+    }
+    if (register) {
+      new IntersectionObserver((entries) => {
+        entries.forEach((e) => { seen.form = e.isIntersecting; });
+        sync();
+      }, { rootMargin: "0px 0px -35% 0px" }).observe(register);
+    }
   }
 
   /* ── validation ───────────────────────────────────────── */
