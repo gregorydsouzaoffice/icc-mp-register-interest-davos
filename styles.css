@@ -475,17 +475,26 @@ dd.cost__note--after { margin: calc(1.5 * var(--v)) 0 0; color: var(--ink); font
   filter: drop-shadow(0 4px 12px rgba(0, 15, 50, .35));
 }
 
-.rsvp { margin-top: calc(13 * var(--v)); font-size: max(14px, calc(9.12 * var(--v))); line-height: 1.25; }
+.rsvp {
+  margin-top: calc(13 * var(--v));
+  font-size: max(14px, calc(9.12 * var(--v)));
+  line-height: 1.35;
+  color: var(--ink-deep);
+}
 .rsvp p { margin: 0; }
-.rsvp__name { text-transform: uppercase; }
-.rsvp__name b { font-size: calc(10.26 / 9.12 * 1em); font-weight: 700; }
-.rsvp__links a { text-decoration: none; }
-.rsvp__links span { margin: 0 .25em; }
-.rsvp a:hover { text-decoration: underline; text-underline-offset: 3px; }
-.rsvp__wa { margin-top: 10px !important; }
-.rsvp__wa a { font-weight: 700; text-decoration: underline; text-decoration-color: rgba(255, 255, 255, .55); text-underline-offset: 4px; }
+.rsvp__name { text-transform: uppercase; font-weight: 600; color: var(--ink-deep); }
+.rsvp__name b { font-size: calc(10.26 / 9.12 * 1em); font-weight: 800; color: var(--ink-deep); }
+.rsvp__links { margin-top: 4px; }
+.rsvp__links a { color: var(--ink-deep); text-decoration: none; font-weight: 600; }
+.rsvp__links span { margin: 0 .3em; color: var(--ink); opacity: .7; }
+.rsvp a:hover { color: var(--night); text-decoration: underline; text-underline-offset: 3px; }
 
-.copyright { margin: calc(14 * var(--v)) 0 0; font-size: 12px; color: rgba(255, 255, 255, .85); }
+.copyright {
+  margin: calc(14 * var(--v)) 0 0;
+  font-size: 12px;
+  color: var(--ink-deep);
+  opacity: .85;
+}
 
 /* ───────────────────────── mobile register button ───────────────────────── */
 
