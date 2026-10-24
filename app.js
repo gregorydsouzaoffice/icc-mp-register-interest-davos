@@ -131,10 +131,12 @@ const CONFIG = {
     // A leading apostrophe stores it as plain text and stays hidden in the sheet.
     const sheetText = (v) => (/^[=+\-@]/.test(v) ? "'" + v : v);
     const val = (k) => sheetText((fd.get(k) || "").toString().trim());
+    const mobile = val("Mobile") || val("Mobile (WhatsApp)");
     return {
       "Submitted At": istTimestamp(),
       "Full Name": val("Full Name"),
-      "Mobile (WhatsApp)": val("Mobile (WhatsApp)"),
+      "Mobile": mobile,
+      "Mobile (WhatsApp)": mobile,
       "Email": val("Email").toLowerCase(),
       "Schengen Visa": val("Schengen Visa"),
       "Notes": val("Notes"),
@@ -148,8 +150,7 @@ const CONFIG = {
   }
 
   function showError(message) {
-    const wa = CONFIG.CONTACT_WHATSAPP.replace(/\D/g, "");
-    statusBox.innerHTML = `${message} If it keeps failing, <a href="https://wa.me/${wa}">WhatsApp Shanu Mehta</a> on ${CONFIG.CONTACT_WHATSAPP}.`;
+    statusBox.innerHTML = `${message} If it keeps failing, please contact Shanu Mehta on <a href="tel:${CONFIG.CONTACT_WHATSAPP.replace(/\s+/g, '')}">${CONFIG.CONTACT_WHATSAPP}</a>.`;
     statusBox.hidden = false;
   }
 
