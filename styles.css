@@ -134,7 +134,7 @@ a { color: inherit; }
 
 .cover__headline {
   margin: 0;
-  padding: calc(6 * var(--u)) 0 calc(4.6 * var(--u));
+  padding: calc(7 * var(--u)) 0;
   border-top: max(1px, calc(.4 * var(--u))) solid var(--cyan);
   border-bottom: max(1px, calc(.4 * var(--u))) solid var(--cyan);
   display: grid;
@@ -146,23 +146,11 @@ a { color: inherit; }
 .hl--1 b { font-weight: 700; }
 .hl--2 { font-size: calc(24.84 * var(--u)); font-weight: 700; letter-spacing: -.006em; margin-top: calc(1.6 * var(--u)); }
 
-.cover__copy {
-  margin: 0;
-  padding: calc(5.4 * var(--u)) 0 calc(5.2 * var(--u));
-  display: grid;
-  font-size: calc(9 * var(--u));
-  line-height: calc(11.3 / 9);
-  text-transform: uppercase;
-}
-.cover__copy span { display: block; white-space: nowrap; letter-spacing: -.013em; }
-.cover__copy b { font-weight: 700; }
-.cover__copy + .cover__copy { border-top: max(1px, calc(.4 * var(--u))) solid var(--cyan); }
-
 .cover__cta {
-  margin-top: clamp(14px, calc(12 * var(--u)), 28px);
+  margin-top: clamp(18px, calc(16 * var(--u)), 34px);
   width: max-content;
-  min-height: max(46px, calc(23 * var(--u)));
-  padding: 0 calc(16 * var(--u));
+  min-height: max(48px, calc(24 * var(--u)));
+  padding: 0 calc(18 * var(--u));
   font-size: max(15px, calc(9.5 * var(--u)));
   font-weight: 700;
   box-shadow: 0 10px 26px -14px rgba(0, 25, 80, .7);
@@ -172,10 +160,10 @@ a { color: inherit; }
 .cover__cta:active { transform: translateY(1px); }
 
 .cover__note {
-  margin: calc(9 * var(--u)) auto 0;
-  max-width: calc(220 * var(--u));
+  margin: clamp(12px, calc(10 * var(--u)), 22px) auto 0;
+  max-width: calc(240 * var(--u));
   display: grid;
-  gap: .25em;
+  gap: .3em;
   font-size: max(13px, calc(7.6 * var(--u)));
   line-height: 1.35;
   color: rgba(255, 255, 255, .92);
@@ -183,17 +171,17 @@ a { color: inherit; }
 }
 .cover__note-invite {
   font-size: max(15px, calc(9.2 * var(--u)));
-  font-weight: 600;
+  font-weight: 700;
   font-style: italic;
-  color: var(--white);
+  color: #8DE8FF;
   letter-spacing: .015em;
 }
 .cover__note-invite em {
   font-style: italic;
 }
 .cover__note-deadline {
-  font-size: max(12px, calc(7.2 * var(--u)));
-  opacity: .92;
+  font-size: max(12.5px, calc(7.4 * var(--u)));
+  color: rgba(255, 255, 255, .9);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -295,24 +283,32 @@ dd.cost__note--after { margin: calc(1.5 * var(--v)) 0 0; color: var(--ink); font
 .cost dd.pill small { font-size: calc(9 / 11 * 1em); }
 
 .members {
-  margin: calc(14 * var(--v)) 0 0;
+  margin: calc(16 * var(--v)) auto calc(6 * var(--v));
+  max-width: calc(230 * var(--v));
   display: grid;
-  font-size: calc(10 * var(--v));
-  font-weight: 700;
-  line-height: 1.26;
-  text-transform: uppercase;
+  gap: calc(3.5 * var(--v));
+  color: var(--ink-deep);
   text-wrap: balance;
 }
 .members__invite {
   font-style: italic;
-  font-size: calc(11.5 * var(--v));
-  letter-spacing: .01em;
-  margin-bottom: calc(3 * var(--v));
+  font-size: calc(12 * var(--v));
+  font-weight: 700;
+  color: var(--ink-deep);
+  letter-spacing: .015em;
+  line-height: 1.25;
 }
 .members__invite em {
   font-style: italic;
 }
-.members sup { font-size: .5em; vertical-align: .95em; line-height: 0; }
+.members__deadline {
+  font-size: calc(10 * var(--v));
+  font-weight: 600;
+  color: var(--ink);
+  letter-spacing: .01em;
+  line-height: 1.25;
+}
+.members sup { font-size: .65em; vertical-align: .45em; line-height: 0; }
 
 .fine {
   margin: calc(17 * var(--v)) auto 0;
@@ -473,8 +469,11 @@ dd.cost__note--after { margin: calc(1.5 * var(--v)) 0 0; color: var(--ink); font
   padding: calc(48 * var(--v)) var(--gutter) calc(16 * var(--v) + env(safe-area-inset-bottom));
   background: url("assets/invest-bg-bottom.jpg") center top / cover no-repeat;
 }
-/* the supplied logo is 151 px wide, so it is not enlarged past ~1.1× */
-.icc-logo { width: min(calc(113.4 * var(--v)), 166px); height: auto; mix-blend-mode: multiply; }
+.icc-logo {
+  width: min(calc(150 * var(--v)), 220px);
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 15, 50, .35));
+}
 
 .rsvp { margin-top: calc(13 * var(--v)); font-size: max(14px, calc(9.12 * var(--v))); line-height: 1.25; }
 .rsvp p { margin: 0; }
