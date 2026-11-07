@@ -6,8 +6,8 @@ const CONFIG = {
   // Leave empty to write to the first tab. Set to a tab name (e.g. "Davos 2027")
   // to keep these rows on their own tab.
   SHEET_TAB: "",
-  // Expressions of interest close at the end of 15 November 2026, India time.
-  DEADLINE: new Date("2026-11-15T23:59:59+05:30"),
+  // Expressions of interest close at the end of 30 November 2026, India time.
+  DEADLINE: new Date("2026-11-30T23:59:59+05:30"),
   CONTACT_WHATSAPP: "+91 98260 43012",
 };
 
@@ -35,7 +35,7 @@ const CONFIG = {
     showPanel("closed");
     document.querySelectorAll("[data-cta]").forEach((a) => { a.textContent = "Contact Shanu Mehta"; a.setAttribute("href", "#register"); });
     const dl = document.querySelector("[data-deadline-text]");
-    if (dl) dl.textContent = "Registrations closed on 15 November 2026.";
+    if (dl) dl.textContent = "Registrations closed on 30 November 2026.";
     if (dock) dock.remove();
     return;
   }

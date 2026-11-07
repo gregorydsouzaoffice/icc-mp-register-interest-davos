@@ -27,7 +27,7 @@ To send rows to a separate tab, set `SHEET_TAB` in `app.js` to that tab's name.
 |---|---|
 | `SHEETDB_URL` | `https://sheetdb.io/api/v1/5jbygah71womk` |
 | `SHEET_TAB` | Empty means the first tab |
-| `DEADLINE` | 15 Nov 2026, 23:59 IST. After this the form is replaced by a "closed" notice |
+| `DEADLINE` | 30 Nov 2026, 23:59 IST. After this the form is replaced by a "closed" notice |
 
 To preview the closed state, add `?state=closed` to the URL.
 
