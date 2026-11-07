@@ -1,4 +1,4 @@
-# ICC MP Davos Circle 2027 · Register interest
+# ICC Davos Circle 2027 · Register interest
 
 Static site (no build step). Target URL: https://icc-mp-register-interest-davos.vercel.app/
 
@@ -27,13 +27,13 @@ To send rows to a separate tab, set `SHEET_TAB` in `app.js` to that tab's name.
 |---|---|
 | `SHEETDB_URL` | `https://sheetdb.io/api/v1/5jbygah71womk` |
 | `SHEET_TAB` | Empty means the first tab |
-| `DEADLINE` | 5 Nov 2026, 23:59 IST. After this the form is replaced by a "closed" notice |
+| `DEADLINE` | 15 Nov 2026, 23:59 IST. After this the form is replaced by a "closed" notice |
 
 To preview the closed state, add `?state=closed` to the URL.
 
 ## Design source
 
-Everything comes from `ICC_MP_Global_Circle_Invitation.pdf` (three pages, Shabd Creatives).
+Everything comes from the original invitation PDF (three pages, Shabd Creatives).
 
 - **Page 1, cover:**
   - Logo `assets/logo-davos-circle.svg` and seat icon `assets/icon-seat.svg` are vector artwork rebuilt from the PDF.

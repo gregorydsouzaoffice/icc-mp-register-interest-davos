@@ -1,4 +1,4 @@
-/* ICC MP Davos Circle 2027 · register-interest form
+/* ICC Davos Circle 2027 · register-interest form
    Submissions are appended as rows to the Google Sheet behind SheetDB. */
 
 const CONFIG = {
